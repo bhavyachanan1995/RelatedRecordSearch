@@ -3,7 +3,7 @@ import {getObjectInfo} from 'lightning/uiObjectInfoApi';
 //getDynamicData
 import { updateRecord } from "lightning/uiRecordApi";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
-import { refreshApex } from "@salesforce/apex";
+//import { refreshApex } from "@salesforce/apex";
 import retrieveDynamicData from '@salesforce/apex/DataController.getDynamicData';
 
 export default class RelatedListDynamicFeatures extends LightningElement 
