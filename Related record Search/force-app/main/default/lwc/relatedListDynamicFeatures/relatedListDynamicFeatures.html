@@ -1,0 +1,46 @@
+<template>
+    
+    <lightning-card variant="narrow" icon-name="utility:user" title="Related record Search">
+        
+    <template lwc:if={loading}>
+        <b>Loading...</b>
+    </template>
+
+    
+        <div style="border-style: ridge;" class="slds-p-around_medium">
+        <strong><lightning-combobox
+    name="SelectRelatedList"
+    label="Select Child Object to Display Related List"
+    value={value}
+    placeholder="Select Child Object"
+    options={options}
+    onchange={handleOptions} ></lightning-combobox></strong>
+        </br>
+<p><b>Selected Child Object is: {value} </b></p>
+</div>
+    
+</br>
+<div style="border-style: ridge;" class="slds-p-around_medium">
+<template lwc:if={loadRecords}>
+    
+    <lightning-layout-item size="6" padding="around-small">
+        <lightning-input type="search" label="Search" onchange={handleSearch} ></lightning-input>
+    </lightning-layout-item>
+
+<lightning-datatable
+data={recordList}
+columns={columns}
+key-field="Id"
+onsave={handleSave}
+hide-checkbox-column="true">
+</lightning-datatable>
+</template>
+
+<template lwc:else>
+    <b>{noRecordsMessage}</b>
+</template>
+</div>
+
+</lightning-card>
+
+</template>
